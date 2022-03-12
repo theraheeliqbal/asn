@@ -110,7 +110,7 @@ const sortUsers = () => {
           // grid view
           <div className="grid_container" id="grid">
             {users?.map((user) => (
-              <Grid user={user} />
+              <Grid key = {user.email} user={user} />
             ))}
             {users?.length % 3 === 2 ? <div className="grid-box"></div> : <></>}
           </div>
@@ -118,7 +118,7 @@ const sortUsers = () => {
           // list view
           <div className="list_container" id="list">
             {users?.map((user) => (
-              <List user={user} />
+              <List key={user.email} user={user} />
             ))}
           </div>
         )}
