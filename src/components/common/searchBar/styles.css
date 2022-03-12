@@ -17,6 +17,9 @@
 }
 
 @media screen and (max-width: 730px) {
+  .search-field{
+    display: flex;
+  }
   .search-field input {
     margin-left: -0.5rem;
   }
