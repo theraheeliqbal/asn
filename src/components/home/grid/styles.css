@@ -1,7 +1,7 @@
 @media screen and (max-width: 730px) {
   .grid-box {
     height: 260px;
-    width: 175px;
+    width: 165px;
     border-radius: 15px;
     position: relative;
   }
@@ -27,7 +27,7 @@
     text-align: center;
   }
   .city-name {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
   }
   .team-image-container {
     margin-top: 2.25rem;
@@ -53,7 +53,7 @@
     top: 138px;
   }
   .curvy-white-rectangle {
-    width: 175px;
+    width: 165px;
     height: auto;
   }
   .simple-rectangle {
