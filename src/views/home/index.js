@@ -81,7 +81,7 @@ const sortUsers = () => {
       <div className="content_container">
         <div className="actions">
           <div className="search-container">
-            <ArrowsIcon cn="hide-on-mobile arrow-icon" onClick={sortUsers} />
+            <ArrowsIcon cn="hide-on-mobile arrow-icon cp" onClick={sortUsers} />
             <SearchBar onSearch={onSearch} />
           </div>
           {showGrid ? (
