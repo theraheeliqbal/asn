@@ -96,8 +96,8 @@ const sortUsers = () => {
             />
           )}
         </div>
-        <div className="actions hide-on-desktop">
-          <ArrowsIcon cn=" arrow-icon" />
+        <div className="actions hide-on-desktop cp">
+          <ArrowsIcon cn=" arrow-icon" onClick={sortUsers}/>
           {showGrid ? (
             <GridIcon cn="cp" onClick={() => setShowGrid(false)} />
           ) : (
