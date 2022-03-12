@@ -1,0 +1,18 @@
+.avatar {
+  border-radius: 100%;
+}
+.medium-image {
+  height: 80px;
+  width: 80px;
+}
+.large-image {
+  height: 100px;
+  width: 100px;
+}
+
+@media screen and (max-width: 730px) {
+  .large-image {
+    height: 80px !important;
+    width: 80px !important;
+  }
+}

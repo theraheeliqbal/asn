@@ -1,0 +1,141 @@
+@media screen and (max-width: 730px) {
+  .grid-box {
+    height: 260px;
+    width: 175px;
+    border-radius: 15px;
+    position: relative;
+  }
+  .grid-svgs {
+    height: 100%;
+    position: relative;
+  }
+  .rectangle-svgs {
+    position: relative;
+  }
+  .team-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+  }
+  .team-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .city-name {
+    margin-top: 2rem;
+  }
+  .team-image-container {
+    margin-top: 2.25rem;
+  }
+  .contact-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55px;
+    margin: auto;
+    margin-top: 0.5rem;
+  }
+  .curvy-rectangle {
+    width: 90px;
+    height: 84px;
+    top: 54px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  .second-rectangle-svg {
+    position: absolute;
+    top: 138px;
+  }
+  .curvy-white-rectangle {
+    width: 175px;
+    height: auto;
+  }
+  .simple-rectangle {
+    width: 89px;
+    height: 85px;
+    top: 55px;
+    position: absolute;
+    right: 0;
+  }
+  .simple-rectangle rect {
+    width: 90px;
+    height: 84px;
+  }
+}
+
+@media screen and (min-width: 731px) {
+  .grid-box {
+    height: 342px;
+    width: 210px;
+    border-radius: 20px;
+    position: relative;
+  }
+  .grid-svgs {
+    height: 100%;
+    position: relative;
+  }
+  .rectangle-svgs {
+    position: relative;
+  }
+  .team-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+  }
+  .team-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 3.75rem;
+    text-align: center;
+  }
+  .city-name {
+    margin-top: 2rem;
+  }
+  .team-image-container {
+    margin-top: 2.5rem;
+  }
+  .contact-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55px;
+    margin: auto;
+    margin-top: 0.5rem;
+  }
+  .curvy-rectangle {
+    width: 90px;
+    height: 84px;
+    top: 94px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  .second-rectangle-svg {
+    position: absolute;
+    top: 178px;
+  }
+  .curvy-white-rectangle {
+    width: 210px;
+    height: 164px;
+  }
+  .simple-rectangle {
+    width: 90px;
+    height: 84px;
+    top: 94px;
+    position: absolute;
+    right: 0;
+  }
+  .simple-rectangle rect {
+    width: 90px;
+    height: 84px;
+  }
+}

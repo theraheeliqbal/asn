@@ -1,0 +1,62 @@
+.list_box {
+  height: 100px;
+  max-width: 749px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+.listview-svgs {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.list-view-svg {
+  width: 131px;
+  height: 100px;
+}
+.rectangle-svgs {
+  position: relative;
+}
+.list-team-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+.list-team-basic-content {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+.list-team-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.city-name {
+  margin-top: 2rem;
+}
+.list-contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55px;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 730px) {
+  .team-content-text {
+    margin-left: 1rem;
+  }
+}
+@media screen and (min-width: 731px) {
+  .team-content-text {
+    margin-left: 2rem;
+  }
+}
