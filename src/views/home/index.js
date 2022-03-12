@@ -11,6 +11,7 @@ import "./styles.css";
 
 const MultiSkelton = () => {
   return (
+    // Placeholders for lazy loading
     <div className="grid_container">
       <SkeltonCard />
       <SkeltonCard />
@@ -27,6 +28,14 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [initialUsers, setInitialUsers] = useState([]);
   const [showGrid, setShowGrid] = useState(true);
+  const [sortOrder, setSortOrder] = useState('dec')
+  
+
+
+const sortUsers = ()=>{
+  const sorted = [...users].sort((a, b) => b['name'].first - a['name'].first);
+  console.log(sorted)
+}
 
   const getUsers = useCallback(() => {
     fetch("https://randomuser.me/api/?results=50")
@@ -56,7 +65,7 @@ function Home() {
       <div className="content_container">
         <div className="actions">
           <div className="search-container">
-            <ArrowsIcon cn="hide-on-mobile arrow-icon" />
+            <ArrowsIcon cn="hide-on-mobile arrow-icon" onClick={sortUsers} />
             <SearchBar onSearch={onSearch} />
           </div>
           {showGrid ? (

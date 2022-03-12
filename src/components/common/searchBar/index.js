@@ -3,7 +3,7 @@ import "./styles.css";
 
 function SearchBar({ onSearch }) {
   return (
-    <div class="search-field">
+    <div className="search-field">
       <SearchIcon cn="search-icon" />
       <input
         type="text"
