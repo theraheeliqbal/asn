@@ -1,6 +1,6 @@
 import React from "react";
 
-function Arrows({ cn }) {
+function Arrows({ cn,onClick }) {
   return (
     <svg
       className={cn}
@@ -8,6 +8,7 @@ function Arrows({ cn }) {
       width="34"
       height="25"
       fill="none"
+      onClick={onClick}
       viewBox="0 0 32 23"
     >
       <path

@@ -28,14 +28,30 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [initialUsers, setInitialUsers] = useState([]);
   const [showGrid, setShowGrid] = useState(true);
-  const [sortOrder, setSortOrder] = useState('dec')
+  const [isAsc, setIsAsc] = useState(false)
   
 
-
-const sortUsers = ()=>{
-  const sorted = [...users].sort((a, b) => b['name'].first - a['name'].first);
-  console.log(sorted)
+const sortUsers = () => {
+  setIsAsc(!isAsc)
+  if(!isAsc){
+    let usersCopy = [...users]
+    function compare( a, b ) {
+      if ( a.name?.first < b.name?.first ){
+        return -1;
+      }
+      if ( a.name?.first > b.name?.first ){
+        return 1;
+      }
+      return 0;
+    }
+    setUsers(usersCopy.sort( compare ));
+  }
+  else {
+    setUsers([...users].reverse())
+  }
 }
+
+
 
   const getUsers = useCallback(() => {
     fetch("https://randomuser.me/api/?results=50")
