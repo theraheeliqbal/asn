@@ -31,28 +31,37 @@ function Home() {
   const [isAsc, setIsAsc] = useState(false);
 
   const sortUsers = () => {
-    setIsAsc(!isAsc);
-    if (!isAsc) {
-      let usersCopy = [...users];
-      function compare(a, b) {
-        if (a.name?.first < b.name?.first) {
-          return -1;
+    if (users) {
+      setIsAsc(!isAsc);
+      if (!isAsc) {
+        let usersCopy = [...users];
+        function compare(a, b) {
+          if (a.name?.first < b.name?.first) {
+            return -1;
+          }
+          if (a.name?.first > b.name?.first) {
+            return 1;
+          }
+          return 0;
         }
-        if (a.name?.first > b.name?.first) {
-          return 1;
-        }
-        return 0;
+        setUsers(usersCopy.sort(compare));
+      } else {
+        setUsers([...users].reverse());
       }
-      setUsers(usersCopy.sort(compare));
-    } else {
-      setUsers([...users].reverse());
     }
   };
 
   const getUsers = useCallback(async () => {
-    let response = await fetch("https://randomuser.me/api/?results=50");
-    response = await response.json();
-    setUsers(response.data.results);
+    try {
+      let response = await fetch("https://randomuser.me/api/?results=50");
+      response = await response.json();
+      setUsers(response.results);
+      setInitialUsers(response.results);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setUsers(null);
+    }
   }, []);
 
   useEffect(() => {
@@ -98,21 +107,29 @@ function Home() {
         </div>
         {loading ? (
           <MultiSkelton />
-        ) : showGrid ? (
-          // grid view
-          <div className="grid_container" id="grid">
-            {users?.map((user) => (
-              <Grid key={Math.random().toString().slice(2)} user={user} />
-            ))}
-            {users?.length % 3 === 2 ? <div className="grid-box"></div> : <></>}
-          </div>
+        ) : users ? (
+          showGrid ? (
+            // grid view
+            <div className="grid_container" id="grid">
+              {users?.map((user) => (
+                <Grid key={Math.random().toString().slice(2)} user={user} />
+              ))}
+              {users?.length % 3 === 2 ? (
+                <div className="grid-box"></div>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            // list view
+            <div className="list_container" id="list">
+              {users?.map((user) => (
+                <List key={Math.random().toString().slice(2)} user={user} />
+              ))}
+            </div>
+          )
         ) : (
-          // list view
-          <div className="list_container" id="list">
-            {users?.map((user) => (
-              <List key={Math.random().toString().slice(2)} user={user} />
-            ))}
-          </div>
+          <h3>Could Not find Users</h3>
         )}
       </div>
     </div>
