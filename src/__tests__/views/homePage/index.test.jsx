@@ -14,14 +14,12 @@ describe("Home Page render Page", () => {
   it("render the Home page", () => {
     render(<Home />);
     expect(document.title).toEqual("Meet the team");
-
     const elem = screen.getByTestId("team-heading");
     expect(elem).toBeInTheDocument();
   });
 
   it("page should show no users text if there is no user", () => {
     render(<Cards users={[]} loading={false} />);
-
     const element = screen.getByTestId("users-missing");
     expect(element).toBeInTheDocument();
   });
@@ -44,13 +42,13 @@ describe("Home Page render Page", () => {
     test("render search input", () => {
       render(<SearchBar onSearch={mock} />);
 
-      const inputEl = screen.getByTestId("email-input");
+      const inputEl = screen.getByTestId("search-input");
       expect(inputEl).toBeInTheDocument();
     });
 
     it("onsearch function should be called when the user search something", async () => {
       render(<SearchBar onSearch={mock} />);
-      const inputEl = screen.getByTestId("email-input");
+      const inputEl = screen.getByTestId("search-input");
 
       await act(async () => {
         fireEvent.change(inputEl, {

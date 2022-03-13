@@ -17,7 +17,7 @@
 }
 
 @media screen and (max-width: 730px) {
-  .search-field{
+  .search-field {
     display: flex;
     padding-left: 0rem;
   }
@@ -37,4 +37,10 @@
   .search-field .search-icon {
     margin-bottom: -0.25rem;
   }
+}
+
+.icon-positioning {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
 }

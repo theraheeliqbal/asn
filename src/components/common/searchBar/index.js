@@ -4,15 +4,17 @@ import "./styles.css";
 function SearchBar({ onSearch }) {
   return (
     <div className="search-field">
-      <SearchIcon cn="search-icon" />
+      <div className="icon-positioning">
+        <SearchIcon cn="search-icon" />
+      </div>
       <form role="search">
-        <label for="search" class="dn"></label>
+        <label for="search" className="dn"></label>
         <input
           type="text"
           onChange={(e) => onSearch(e.target.value)}
           id="search"
           name="search"
-          data-testid="email-input"
+          data-testid="search-input"
         />
       </form>
     </div>
