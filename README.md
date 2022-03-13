@@ -30,11 +30,11 @@ npm install
 
 start application in development mode
 
-### `npm test`
+### `npm run test`
 
 run tests
 
-### `npm build`
+### `npm run build`
 
 build react app for deployment
 

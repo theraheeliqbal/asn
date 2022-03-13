@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable testing-library/no-unnecessary-act */
 // libraries
 import "@testing-library/jest-dom/extend-expect";
 import { render, cleanup, fireEvent, act } from "@testing-library/react";
