@@ -16,17 +16,14 @@
   align-items: center;
   justify-content: space-between;
   margin: 15px 0px;
- 
 }
 .content_container {
   max-width: 752px;
-  width: 100%;
+  /* width: 100%; */
   margin: auto;
   padding: 0px 20px;
   margin-top: 3rem;
 }
-
-
 
 .list_container {
   width: 100%;
@@ -34,7 +31,6 @@
 
 /* Mobile Screens */
 @media screen and (max-width: 730px) {
-
   .hide-on-mobile {
     display: none;
   }
@@ -50,31 +46,19 @@
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 30%;
-    row-gap: 30px;
+    column-gap: 0.3rem;
+    row-gap: 2rem;
     align-items: center;
     justify-content: space-between;
-  
   }
-  
 }
 
-/* For responsive screen excess gap issue */
-@media screen and (max-width: 729px) and (min-width: 698px){
+@media screen and (min-width: 430px) and (max-width: 570px) {
   .grid_container {
     column-gap: 1rem;
+    justify-content: center;
   }
 }
-
-/*  */
-@media screen and (max-width: 550px) and (min-width:430px){
-  .grid_container {
-    column-gap: 1rem ;
-    justify-content: center 
-  
-  }
-}
-
-
 
 @media screen and (min-width: 731px) {
   .grid_container {
@@ -82,13 +66,12 @@
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 30%;
-    gap: 30px;
+    column-gap: 0.5rem;
+    row-gap: 2rem;
     align-items: center;
     justify-content: space-between;
-  
   }
-  
-  
+
   .hide-on-desktop {
     display: none;
   }
@@ -98,8 +81,8 @@
     margin-left: 20px;
   }
 }
-@media screen and (max-width:730px) {
-  .content_container{
+@media screen and (max-width: 730px) {
+  .content_container {
     width: auto;
   }
 }

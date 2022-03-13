@@ -28,30 +28,26 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [initialUsers, setInitialUsers] = useState([]);
   const [showGrid, setShowGrid] = useState(true);
-  const [isAsc, setIsAsc] = useState(false)
-  
+  const [isAsc, setIsAsc] = useState(false);
 
-const sortUsers = () => {
-  setIsAsc(!isAsc)
-  if(!isAsc){
-    let usersCopy = [...users]
-    function compare( a, b ) {
-      if ( a.name?.first < b.name?.first ){
-        return -1;
+  const sortUsers = () => {
+    setIsAsc(!isAsc);
+    if (!isAsc) {
+      let usersCopy = [...users];
+      function compare(a, b) {
+        if (a.name?.first < b.name?.first) {
+          return -1;
+        }
+        if (a.name?.first > b.name?.first) {
+          return 1;
+        }
+        return 0;
       }
-      if ( a.name?.first > b.name?.first ){
-        return 1;
-      }
-      return 0;
+      setUsers(usersCopy.sort(compare));
+    } else {
+      setUsers([...users].reverse());
     }
-    setUsers(usersCopy.sort( compare ));
-  }
-  else {
-    setUsers([...users].reverse())
-  }
-}
-
-
+  };
 
   const getUsers = useCallback(() => {
     fetch("https://randomuser.me/api/?results=50")
@@ -97,7 +93,7 @@ const sortUsers = () => {
           )}
         </div>
         <div className="actions hide-on-desktop cp">
-          <ArrowsIcon cn=" arrow-icon" onClick={sortUsers}/>
+          <ArrowsIcon cn=" arrow-icon" onClick={sortUsers} />
           {showGrid ? (
             <GridIcon cn="cp" onClick={() => setShowGrid(false)} />
           ) : (
@@ -110,7 +106,7 @@ const sortUsers = () => {
           // grid view
           <div className="grid_container" id="grid">
             {users?.map((user) => (
-              <Grid key = {user.email} user={user} />
+              <Grid key={Math.random().toString().slice(2)} user={user} />
             ))}
             {users?.length % 3 === 2 ? <div className="grid-box"></div> : <></>}
           </div>
@@ -118,7 +114,7 @@ const sortUsers = () => {
           // list view
           <div className="list_container" id="list">
             {users?.map((user) => (
-              <List key={user.email} user={user} />
+              <List key={Math.random().toString().slice(2)} user={user} />
             ))}
           </div>
         )}
