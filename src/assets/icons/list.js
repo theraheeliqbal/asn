@@ -10,6 +10,8 @@ function List({ cn, onClick }) {
       viewBox="0 0 22 21"
       className={cn}
       onClick={onClick}
+      role="button"
+      aria-label="change to list view"
     >
       <path
         fill="#000"

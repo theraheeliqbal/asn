@@ -28,7 +28,7 @@ npm install
 
 ### `npm start`
 
-start application and development mode
+start application development mode
 
 ### `npm test`
 

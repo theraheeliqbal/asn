@@ -4,3 +4,6 @@
 .cp {
   cursor: pointer;
 }
+.dn {
+  display: none;
+}
