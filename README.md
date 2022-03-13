@@ -1,27 +1,43 @@
-#Meet the Team Screens 
+# Meet the team screen
 
-This project is bootstrapped using create-react-app based on the figma design
+This project shows cards for 50 team members
 
-[http://localhost:3000](http://localhost:3000)
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- The view can be changed between and list view and grid view.
+- Members can be sorted in ascending or descending order of their names.
+- You can find a member using the live search feature.
 
+## Installation
 
-### Getting started
+You should have node and npm installed to run this project.
 
-You can clone this repository using the below command
-    
-    `git clone https://github.com/theraheeliqbal/asn.git`
+Use git to clone Github repo
 
-Go to the project directory and download node modules using 
-    
-    `npm install`
+```
+git clone https://github.com/theraheeliqbal/asn.git
+```
+
+After successfully cloning the repository, go to the project directory and run
+
+```
+npm install
+```
+
+## Available scripts
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+start application and development mode
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm test`
+
+run tests
+
+### `npm build`
+
+build react app for deployment
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
