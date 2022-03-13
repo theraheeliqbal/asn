@@ -58,6 +58,11 @@
     column-gap: 0.3rem;
   }
 }
+@media screen and (max-width: 370px) {
+  .grid_container {
+    justify-content: center;
+  }
+}
 
 @media screen and (min-width: 430px) and (max-width: 570px) {
   .grid_container {
