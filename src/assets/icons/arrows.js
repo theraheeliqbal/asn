@@ -1,6 +1,6 @@
 import React from "react";
 
-function Arrows({ cn, onClick }) {
+function Arrows({ cn,onClick }) {
   return (
     <svg
       className={cn}
@@ -10,8 +10,6 @@ function Arrows({ cn, onClick }) {
       fill="none"
       onClick={onClick}
       viewBox="0 0 32 23"
-      role="button"
-      aria-label="sort members by name"
     >
       <path
         fill="#000"

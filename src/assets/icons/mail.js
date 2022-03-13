@@ -1,6 +1,6 @@
 import React from "react";
 
-function Mail({ mail }) {
+function Mail({ cp, mail }) {
   return (
     <a href={`mailto:${mail}`}>
       <svg
@@ -10,8 +10,6 @@ function Mail({ mail }) {
         height="22"
         fill="none"
         viewBox="0 0 22 22"
-        role="button"
-        aria-label="send email"
       >
         <path
           fill="#000"

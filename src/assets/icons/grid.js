@@ -10,8 +10,6 @@ function Grid({ cn, onClick }) {
       viewBox="0 0 24 23"
       className={cn}
       onClick={onClick}
-      role="button"
-      aria-label="change to grid view"
     >
       <path
         fill="#000"

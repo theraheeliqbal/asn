@@ -1,27 +1,12 @@
-import Grid from "../../components/home/grid";
+import { useCallback, useEffect, useState } from "react";
+
 import GridIcon from "../../assets/icons/grid";
 import ListIcon from "../../assets/icons/list";
 import ArrowsIcon from "../../assets/icons/arrows";
 import SearchBar from "../../components/common/searchBar";
-import { useCallback, useEffect, useState } from "react";
-import List from "../../components/home/list";
-import SkeltonCard from "../../components/common/skeltonCard";
 
 import "./styles.css";
-
-const MultiSkelton = () => {
-  return (
-    // Placeholders for lazy loading
-    <div className="grid_container">
-      <SkeltonCard />
-      <SkeltonCard />
-      <SkeltonCard />
-      <SkeltonCard />
-      <SkeltonCard />
-      <SkeltonCard />
-    </div>
-  );
-};
+import Cards from "../../components/home/cards";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -65,6 +50,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    document.title = "Meet the team";
     getUsers();
   }, [getUsers]);
 
@@ -78,7 +64,9 @@ function Home() {
 
   return (
     <div className="main">
-      <h1 className="team-heading">Meet the Team</h1>
+      <h1 className="team-heading" data-testid="team-heading">
+        Meet the Team
+      </h1>
       <div className="content_container">
         <div className="actions">
           <div className="search-container">
@@ -105,32 +93,7 @@ function Home() {
             <ListIcon cn="cp" onClick={() => setShowGrid(true)} />
           )}
         </div>
-        {loading ? (
-          <MultiSkelton />
-        ) : users ? (
-          showGrid ? (
-            // grid view
-            <div className="grid_container" id="grid">
-              {users?.map((user) => (
-                <Grid key={Math.random().toString().slice(2)} user={user} />
-              ))}
-              {users?.length % 3 === 2 ? (
-                <div className="grid-box"></div>
-              ) : (
-                <></>
-              )}
-            </div>
-          ) : (
-            // list view
-            <div className="list_container" id="list">
-              {users?.map((user) => (
-                <List key={Math.random().toString().slice(2)} user={user} />
-              ))}
-            </div>
-          )
-        ) : (
-          <h3>Could Not find Users</h3>
-        )}
+        <Cards users={users} showGrid={showGrid} loading={loading} />
       </div>
     </div>
   );

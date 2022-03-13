@@ -1,0 +1,1 @@
+setupFilesAfterEnv: ["<rootDir>/setupTests.js"];
