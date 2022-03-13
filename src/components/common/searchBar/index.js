@@ -5,6 +5,7 @@ function SearchBar({ onSearch }) {
   return (
     <div className="search-field">
       <SearchIcon cn="search-icon" />
+      <label for="search" class="dn"></label>
       <input
         type="text"
         onChange={(e) => onSearch(e.target.value)}
