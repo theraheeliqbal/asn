@@ -38,8 +38,8 @@ function Grid({ user }) {
         </div>
         <p className="city-name">New York</p>
         <div className="contact-icons">
-          <Mail />
-          <Call />
+          <Mail mail={user.email}  />
+          <Call tel={user.phone}/>
         </div>
       </div>
     </div>

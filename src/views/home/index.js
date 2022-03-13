@@ -49,14 +49,10 @@ function Home() {
     }
   };
 
-  const getUsers = useCallback(() => {
-    fetch("https://randomuser.me/api/?results=50")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data.results);
-        setInitialUsers(data.results);
-        setLoading(false);
-      });
+  const getUsers = useCallback(async () => {
+    let response = await fetch("https://randomuser.me/api/?results=50");
+    response = await response.json();
+    setUsers(response.data.results);
   }, []);
 
   useEffect(() => {
