@@ -26,7 +26,7 @@ function Cards({ users, loading, showGrid }) {
           // grid view
           <div className="grid_container" id="grid">
             {users?.map((user) => (
-              <Grid key={Math.random().toString().slice(2)} user={user} />
+              <Grid key={user.login.uuid} user={user} />
             ))}
             {users?.length % 3 === 2 ? <div className="grid-box"></div> : <></>}
           </div>
@@ -34,7 +34,7 @@ function Cards({ users, loading, showGrid }) {
           // list view
           <div className="list_container" id="list">
             {users?.map((user) => (
-              <List key={Math.random().toString().slice(2)} user={user} />
+              <List key={user.login.uuid} user={user} />
             ))}
           </div>
         )

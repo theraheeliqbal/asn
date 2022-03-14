@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, lazy, Suspense } from "react";
 
 import GridIcon from "../../assets/icons/grid";
 import ListIcon from "../../assets/icons/list";
@@ -6,7 +6,8 @@ import ArrowsIcon from "../../assets/icons/arrows";
 import SearchBar from "../../components/common/searchBar";
 
 import "./styles.css";
-import Cards from "../../components/home/cards";
+//import Cards from "../../components/home/cards";
+const Cards = lazy(() =>  import("../../components/home/cards"));
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -93,7 +94,10 @@ function Home() {
             <ListIcon cn="cp" onClick={() => setShowGrid(true)} />
           )}
         </div>
-        <Cards users={users} showGrid={showGrid} loading={loading} />
+        
+        <Suspense fallback={<div>Lazy Loading</div>}>
+          <Cards users={users} showGrid={showGrid} loading={loading} />
+        </Suspense>
       </div>
     </div>
   );
